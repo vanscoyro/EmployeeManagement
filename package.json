@@ -1,18 +1,18 @@
 {
-  "name": "EmployeeManagement",
-  "version": "1.0.0",
-  "description": "This program allows a company to manage employees using node, inquirer, and MySQL",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "console.table": "^0.10.0",
-    "inquirer": "^8.0.0",
-    "mysql": "^2.18.1"
-  }
+    "name": "EmployeeManagement",
+    "version": "1.0.0",
+    "description": "This program allows a company to manage employees using node, inquirer, and MySQL",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "console.table": "^0.10.0",
+        "inquirer": "^8.0.0",
+        "mysql": "^2.18.1"
+    }
 }
