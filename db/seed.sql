@@ -31,5 +31,5 @@ VALUES
     ('Bob','Dole',6,null),
     ('Texas','Red',5,5),
     ('Huegh', 'Heffner',9,null),
-    ('Newbie','Chris',7,7),
-    ('GettinThereJr','Angel',8,7);
+    ('Chris','Newbie',7,7),
+    ('Angel','GettinThereJr',8,7);
