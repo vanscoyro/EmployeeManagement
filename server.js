@@ -171,4 +171,66 @@ function addRole() {
       });
   });
 };
+//adds employee to DB
+function addEmployee() {
+  const query = `SELECT name, id as value FROM departments ORDER BY id`
+  connection.query(query, (err, departments) => {
+    if (err) throw err;
+
+    const query = `SELECT title as name, id as value FROM role ORDER BY id`
+    connection.query(query, (err, roles) => {
+      if (err) throw err;
+
+      const query = `SELECT first_name as name, id as value FROM employees WHERE role_id IS NULL`
+      connection.query(query, (err, employees) => {
+        if (err) throw err;
+        
+        const query = `SELECT first_name as name, id as value FROM employees WHERE manager_id IS NULL`
+          connection.query(query, (err, employees) => {
+        if (err) throw err;
+
+        inquirer
+          .prompt([{
+            type: 'input',
+            message: 'Employee first name?',
+            name: 'first_name'
+          },
+          {
+            type: 'input',
+            message: 'Employee last name?',
+            name: 'last_name'
+          },
+          {
+            type: 'list',
+            name: 'role_id',
+            message: 'What Role does this Employee have?',
+            choices: [...roles ]
+          },
+          {
+              type: 'list',
+              name: 'manager_id',
+              messages: "Who is this Employee's Manager?",
+              choices: [...employees, { name: 'none', value: null }]
+
+          }]).then((answer) => {
+            console.log(answer)
+
+            let query = `INSERT INTO 
+                        employees (first_name, last_name, role_id , manager_id)
+        VALUES 
+          ('${answer.first_name}','${answer.last_name}','${answer.role_id}',${answer.manager_id});`
+            connection.query(query, (err, res) => {
+              if (err) throw err;
+              console.log('NEW EMPLOYEE ADDED');
+              console.log('\n');
+              init();
+            });
+          });
+      });
+    });
+  });
+``});
+}
+
+
   
