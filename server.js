@@ -108,6 +108,67 @@ function viewRoles() {
     });
   
   }
+// add departments to DB
+function addDepartment() {
+  const query = `SELECT name, id as value FROM departments`
+  connection.query(query, (err, departments) => {
+    if (err) throw err;
+    inquirer
+      .prompt([{
+        type: 'input',
+        message: 'Name of new department?',
+        name: 'department'
+      }]).then((answer) => {
 
+        console.log(answer)
+        let query = `INSERT INTO departments (name)
+            VALUES ('${answer.department}');`
+        connection.query(query, (err, res) => {
+          if (err) throw err;
+          console.log('NEW DEPARTMENT ADDED');
+          console.log('\n');
+          init();
+        });
+      });
+  });
+};
+// adds role to DB
+function addRole() {
+  const query = `SELECT name, id as value FROM departments ORDER BY id`
+  connection.query(query, (err, departments) => {
+    if (err) throw err;
+    inquirer
+      .prompt([{
+        type: 'input',
+        message: 'Name of new role?',
+        name: 'title'
+      },
+      {
+        type: 'input',
+        message: 'What salary does this role have?',
+        name: 'salary'
+        
+      },
+      {
+        type: 'list',
+        message: 'What Department does thie new Role belong to?',
+        choices: [...departments],
+        name: 'department'
+      }
+      ]).then((answer) => {
 
+        console.log(answer)
+        let query = `INSERT INTO 
+                  role (title, salary, department_id )
+  VALUES 
+    ('${answer.title}','${answer.salary}','${answer.department}');`
+        connection.query(query, (err, res) => {
+          if (err) throw err;
+          console.log('NEW ROLE ADDED');
+          console.log('\n');
+          init();
+        });
+      });
+  });
+};
   
