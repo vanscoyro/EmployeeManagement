@@ -232,5 +232,42 @@ function addEmployee() {
 ``});
 }
 
+//updates selected employee role in DB
+function updateEmployees() {
 
-  
+  const query = `SELECT title as name, id as value FROM role ORDER BY id`
+  connection.query(query, (err, roles) => {
+    if (err) throw err;
+
+    const query = `SELECT first_name as name, id as value FROM employees`
+    connection.query(query, (err, employees) => {
+
+      if (err) throw err;
+      console.table(employees);
+
+      inquirer
+        .prompt([{
+          type: 'list',
+          message: 'Update what employee?',
+          choices: [...employees],
+          name: 'employee'
+        },
+        {
+          type: 'list',
+          message: 'Update employee to what role?',
+          choices: [...roles],
+          name: 'role'
+        }
+        ]).then((answer) => {
+
+          let query = `UPDATE employees SET role_id = ${answer.role} WHERE id = ${answer.employee}`
+          connection.query(query, (err, res) => {
+            if (err) throw err;
+            console.log('EMPLOYEE UPDATED');
+            console.log('\n');
+            init();
+          });
+        });
+    });
+  });
+}
