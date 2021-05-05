@@ -14,12 +14,12 @@ VALUES
     ('Level 1 Tech', 30000,1),
     ('Level 2 Tech', 40000,1),
     ('Tech Lead', 70000, 1),
-    ('Hosting Staff', 60000,1),
-    ('Basic Trainer', 40000,2),
-    ('Master Trainer', 50000,2),
-    ('Developer Level 1',70000,3),
-    ('Developer Level 2', 80000,3),
-    ('Senior Developer', 100000,3);
+    ('Hosting Staff', 60000,2),
+    ('Basic Trainer', 40000,3),
+    ('Master Trainer', 50000,3),
+    ('Developer Level 1',70000,4),
+    ('Developer Level 2', 80000,4),
+    ('Senior Developer', 100000,4);
     
 
 INSERT INTO employees (first_name,last_name,role_id,manager_id)
