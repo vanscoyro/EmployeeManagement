@@ -82,8 +82,10 @@ function viewDepartments() {
     const query = `SELECT * FROM departments ORDER BY id`
     connection.query(query, (err, res) => {
       if (err) throw err;
-      console.log('DEPARTMENTS');
-      console.log('\n');
+      console.log( figlet.textSync("Departments", {
+        horizontalLayout:"default",
+        verticalLayout:"default"
+      }));
       printTable(res);
       init();
     });
@@ -94,8 +96,10 @@ function viewRoles() {
     const query = `SELECT * FROM role ORDER BY id`
     connection.query(query, (err, res) => {
       if (err) throw err;
-      console.log('ROLES');
-      console.log('\n');
+      console.log( figlet.textSync("Roles", {
+        horizontalLayout:"default",
+        verticalLayout:"default"
+      }));
       printTable(res);
       init();
     });
@@ -120,7 +124,6 @@ function viewRoles() {
           verticalLayout:"default"
         })
       );
-      console.log('\n');
       printTable(res);
       init();
     });
