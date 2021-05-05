@@ -1,13 +1,26 @@
 const inquirer = require('inquirer');
-const cTable = require('console.table');
 const connection = require('./config/connection');
+const figlet = require('figlet');
+const { printTable } = require('console-table-printer');
+
 
 //initial connection to mysql used to initialize app
 connection.connect((err) => {
     if (err) throw err;
     console.log(`connected as id ${connection.threadId}`);
+    welcomeMessage();
     init();
   });
+
+const welcomeMessage = () =>{
+  console.log(
+    figlet.textSync("Employee Manager", {
+      horizontalLayout:"default",
+      verticalLayout:"default"
+    })
+  )
+  
+};
 
   // main menu inquierer 
 const init = () => {
@@ -71,7 +84,7 @@ function viewDepartments() {
       if (err) throw err;
       console.log('DEPARTMENTS');
       console.log('\n');
-      console.table(res);
+      printTable(res);
       init();
     });
   }
@@ -83,7 +96,7 @@ function viewRoles() {
       if (err) throw err;
       console.log('ROLES');
       console.log('\n');
-      console.table(res);
+      printTable(res);
       init();
     });
   
@@ -101,9 +114,14 @@ function viewRoles() {
       ON m.id = e.manager_id`
     connection.query(query, (err, res) => {
       if (err) throw err;
-      console.log('EMPLOYEES');
+      console.log(
+        figlet.textSync("Employees", {
+          horizontalLayout:"default",
+          verticalLayout:"default"
+        })
+      );
       console.log('\n');
-      console.table(res);
+      printTable(res);
       init();
     });
   
@@ -243,7 +261,7 @@ function updateEmployees() {
     connection.query(query, (err, employees) => {
 
       if (err) throw err;
-      console.table(employees);
+      printTable(employees);
 
       inquirer
         .prompt([{
