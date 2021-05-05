@@ -15,10 +15,18 @@ _______________________________________________________________
 
 _______________________________________________________________
 
-_______________________________________________________________
 ### Demo:
 * https://youtu.be/B9lgCpPGvjQ
 
+<img src='assets/employee_1.JPG' alt="manager1">
+
+<img src='assets/employee_2.JPG' alt="manager2">
+
+<img src='assets/employee_3.JPG' alt="manager3">
+
+<img src='assets/employee_4.JPG' alt="manager4">
+
+<img src='assets/employee_tracker.gif' alt="manager Gif">
 _______________________________________________________________
 
 ### Main Language : 
