@@ -11,6 +11,7 @@ _______________________________________________________________
 * Info on license: https://opensource.org/licenses/MIT
 _______________________________________________________________
 ### Installation Instructions:
+
 * Install node dependencies : inquirer, mysql, console.table . Also be sure to seed database so CLI will have data to work with.
 
 _______________________________________________________________
@@ -19,20 +20,27 @@ _______________________________________________________________
 * https://youtu.be/B9lgCpPGvjQ
 
 <img src='assets/employee_1.JPG' alt="manager1">
+
 * Main Menu
 
 <img src='assets/employee_2.JPG' alt="manager2">
+
 * View Departments
 
 <img src='assets/employee_3.JPG' alt="manager3">
+
 * View Roles
 
 <img src='assets/employee_4.JPG' alt="manager4">
+
 * View Employees
 
 <img src='assets/employee_tracker.gif' alt="manager Gif">
 * GIF showcasing app in action
+
+
 _______________________________________________________________
+
 
 ### Main Language : 
 * node.js
