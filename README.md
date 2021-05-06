@@ -47,6 +47,7 @@ _______________________________________________________________
 _______________________________________________________________
 
 <img src='assets/employee_tracker.gif' alt="manager Gif">
+
 * GIF showcasing app in action
 
 
