@@ -19,14 +19,19 @@ _______________________________________________________________
 * https://youtu.be/B9lgCpPGvjQ
 
 <img src='assets/employee_1.JPG' alt="manager1">
+* Main Menu
 
 <img src='assets/employee_2.JPG' alt="manager2">
+* View Departments
 
 <img src='assets/employee_3.JPG' alt="manager3">
+* View Roles
 
 <img src='assets/employee_4.JPG' alt="manager4">
+* View Employees
 
 <img src='assets/employee_tracker.gif' alt="manager Gif">
+* GIF showcasing app in action
 _______________________________________________________________
 
 ### Main Language : 
