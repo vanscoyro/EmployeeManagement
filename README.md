@@ -12,7 +12,7 @@ _______________________________________________________________
 _______________________________________________________________
 ### Installation Instructions:
 
-* Install node dependencies : inquirer, mysql, console.table . Also be sure to seed database so CLI will have data to work with.
+* Install node dependencies : inquirer, mysql, figlet, console-table-printer . Also be sure to seed database so CLI will have data to work with.
 
 _______________________________________________________________
 
